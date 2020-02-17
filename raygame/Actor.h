@@ -15,10 +15,8 @@ public:
 	std::list<Actor> removals;
 	std::list<Actor> additions;
 
-	float X();
-	float Y();
-	float Y(float input);
-	float X(float input,float input2 = 0);
+	float X;
+	float Y;
 
 	float XAbsolute();
 	
@@ -34,6 +32,8 @@ public:
 	virtual void Update();
 	virtual void Start();
 	virtual void Draw();
+
+	bool started;
 
 
 private:

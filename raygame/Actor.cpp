@@ -11,37 +11,60 @@ Actor::~Actor()
 {
 }
 
-float Actor::X()
-{
-	return LocalTransform.m8;
-}
-
-float Actor::X(float input)
-{
-	LocalTransform.m8 = input;
-	return LocalTransform.m8;
-	UpdateTransform;
-}
 float Actor::XAbsolute()
 {
 	return GlobalTransform.m8;
 }
-float Actor::Y()
-{
-	return LocalTransform.m9;
-}
 
-float Actor::Y(float input)
-{
-	LocalTransform.m8 = input;
-	return LocalTransform.m9;
-	UpdateTransform;
-}
 float Actor::YAbsolute()
 {
-	return GlobalTransform.m9;
+	return 0.0f;
 }
+
 float Actor::GetRotation()
 {
 	return (float)std::atan2(GlobalTransform.m1, GlobalTransform.m0);
+}
+
+float Actor::GetScale()
+{
+	return 0.0f;
+}
+
+void Actor::AddChild(Actor child)
+{
+	
+	
+		//## Implement AddChild(Actor) ##//
+		if (child.parent != nullptr)
+		{
+			return;
+		}
+
+		child.parent = this;
+
+		additions.push_front(child);
+
+	
+}
+
+void Actor::RemoveChild(Actor child)
+{
+}
+
+void Actor::UpdateTransform()
+{
+}
+
+void Actor::Update()
+{
+}
+
+void Actor::Start()
+{
+	started = true;
+}
+
+void Actor::Draw()
+{
 }
