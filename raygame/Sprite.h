@@ -1,11 +1,14 @@
 #pragma once
 #include "raylib.h"
+#include "Actor.h"
 
-class Sprite
+class Sprite : public Actor
 {
 public:
 
 	Sprite(char path[60]);
+
+	void Draw() override;
 
 	float Width;
 	float Height;
