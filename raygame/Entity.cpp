@@ -14,8 +14,8 @@ Entity::~Entity()
 }
 Entity::Entity(float x, float y)
 {
-	X(x);
-	Y(y);
+	X=x;
+	Y=y;
 }
 void Entity::Update()
 {
@@ -25,8 +25,8 @@ void Entity::Update()
 	YVelocity = YVelocity + YAcceleration * GetFrameTime();
 	//## Calculate position from velocity ##//
 	//update position from position
-	 X(X() + XVelocity * GetFrameTime());
-	 Y(Y() + YVelocity * GetFrameTime());
+	 X += XVelocity * GetFrameTime();
+	 Y += YVelocity * GetFrameTime();
 	
 }
 
@@ -48,4 +48,16 @@ void Entity::setYVelocity(float value)
 void Entity::setYAcceleration(float value)
 {
 	YAcceleration = value;
+}
+
+void Entity::Update()
+{
+
+	XVelocity = XVelocity + XAcceleration * GetFrameTime();
+	YVelocity = YVelocity + YAcceleration * GetFrameTime();
+	//## Calculate position from velocity ##//
+	//update position from position
+	X +=  XVelocity * GetFrameTime();
+	Y +=  YVelocity * GetFrameTime();
+	
 }
