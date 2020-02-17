@@ -5,13 +5,13 @@
 
 //Creates a Game and new Scene instance as its active Scene
 
-Game::Game(int width, int height, char * title)
+Game::Game(int width, int height)
 {
 	Actor root;
 
 	windowsizeX = width;
 	windowsizeY = height;
-	InitWindow(width, height, title);
+	InitWindow(width, height,"restrainment of el");
 	SetTargetFPS(0);
 
 }
@@ -19,12 +19,6 @@ Game::Game(int width, int height, char * title)
 Game::~Game()
 {
 }
-
-void Game::run()
-{
-}
-//Creates a Game and new Scene instance as its active Scene
-
 
 //Run the game loop
 void Game::run()
@@ -48,7 +42,7 @@ void Game::run()
 			//}
 
 			//Start the Scene if needed
-			if (!root.Started)
+			if (!root.started)
 			{
 				root.Start();
 			}

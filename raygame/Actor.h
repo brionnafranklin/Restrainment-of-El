@@ -33,7 +33,7 @@ public:
 	virtual void Start();
 	virtual void Draw();
 
-	bool Started;
+	bool started;
 
 
 private:
